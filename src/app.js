@@ -1,5 +1,4 @@
 const express = require('express');
-
 const config = require('./config.js');
 const placesController = require('./controller/prices.js')
 
@@ -7,24 +6,6 @@ const PORT = config.port;
 const app = express();
 
 app.use(placesController);
-// const STATUS_SUCCESS = 200;
-// const STATUS_USER_ERROR = 422;
-// const { currPrice, yesterdaysPrice, difference } = require('./models/prices.js');
-//
-// app.get('/compare', (req, res) => {
-//   const currentPrice = currPrice()
-//     .catch(err => res.status(STATUS_USER_ERROR).json({ err: err}));
-//   const historicalPrice = yesterdaysPrice()
-//     .catch(err => res.status(STATUS_USER_ERROR).json({ err: err}));
-//
-//   Promise.all([currentPrice, historicalPrice])
-//     .then(prices => {
-//       res.status(STATUS_SUCCESS)
-//       res.json(prices[0] - prices[1])
-//     })
-//     .catch(err => res.status(STATUS_USER_ERROR).json({ err: err}));
-// });
-
 
 
 app.listen(PORT, err => {
@@ -38,15 +19,7 @@ app.listen(PORT, err => {
 
 
 
-
-
-
-
-
-
-
-
-
+//Solution without MVC model 
 // app.get('/compare', (req, res) => {
 //
 //   // const currPrice =
